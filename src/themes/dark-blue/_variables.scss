@@ -1,0 +1,31 @@
+$primary: #003245;
+$primary-active: #001d26;
+$primary-disabled: #999999;
+$primary-foreground: #ffffff;
+
+$secondary: #7bcc7a;
+$secondary-active: #5ab257;
+$secondary-disabled: #999999;
+$secondary-foreground: #ffffff;
+
+$success: #0097d1;
+$success-active: #0086c4;
+$success-disabled: #999999;
+$success-foreground: #ffffff;
+
+$danger: #ff483d;
+$danger-active: #ea2f2f;
+$danger-disbaled: #999999;
+$danger-foreground: #ffffff;
+
+$warning: #fcb559;
+$warning-active: #fa9a3c;
+$warning-disabled: #999999;
+$warning-foreground: #ffffff;
+
+$primary-hover: darken($primary, 10%);
+$secondary-hover: darken($secondary, 10%);
+
+$text: #000;
+
+$sidebar-width: 270px;

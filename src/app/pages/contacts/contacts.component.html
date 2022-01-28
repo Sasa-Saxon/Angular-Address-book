@@ -1,0 +1,52 @@
+<app-header></app-header>
+<h1 class="naslov">Angular Phone Book</h1>
+<div>
+<button mat-raised-button mat-button color="primary" class="btn" routerLink="contact/add" >
+Add Conatact
+</button>
+ 
+<table mat-table [dataSource]="contacts" class=" contact-table mat-elevation-z8">
+  <ng-container matColumnDef="id" >
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let contact"> {{contact.id}} </td>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let contact"> {{contact.name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email </th>
+    <td mat-cell *matCellDef="let contact"> {{contact.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef> Phone </th>
+    <td mat-cell *matCellDef="let contact"> {{contact.phone}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="action1">
+    <th mat-header-cell *matHeaderCellDef> Action1 </th>
+    <td mat-cell *matCellDef="let contact" > 
+    <button mat-button color="primary" routerLink="contact/edit/{{contact.id}}">Edit</button>
+    </td>
+  </ng-container>
+ 
+
+  <ng-container  matColumnDef="action2" >
+    <th mat-header-cell *matHeaderCellDef> Action2 </th>
+    <td mat-cell *matCellDef="let contact"   > 
+    <button mat-button color="warn"    (click)="onDelete(contact.id)" >Delete</button>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"  ></tr>
+  <tr mat-row *matRowDef="let row;  columns:displayedColumns ;" ></tr>
+
+</table>
+</div>

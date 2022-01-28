@@ -1,0 +1,39 @@
+<div class="width-100">
+  <h2>{{ header }}</h2>
+  <form [formGroup]="editForm">
+    <mat-form-field appearance="fill" class="width-100">
+      <mat-label>Enter your name</mat-label>
+      <input matInput placeholder="John Diggle" formControlName="nameCtrl" required>
+      <mat-error *ngIf="editForm.controls['nameCtrl'].hasError('required')">
+        You must enter a value
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="width-100">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="emailCtrl" required>
+      <mat-error *ngIf="editForm.controls['emailCtrl'].hasError('required')">
+        You must enter a value
+      </mat-error>
+      <mat-error *ngIf="editForm.controls['emailCtrl'].hasError('pattern')">
+        <mat-label>Invalid email</mat-label>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="width-100">
+      <mat-label>Enter your phone</mat-label>
+      <input matInput placeholder="John Diggle" formControlName="phoneCtrl" required>
+      <mat-error *ngIf="editForm.controls['phoneCtrl'].hasError('required')">
+        You must enter a value
+      </mat-error>
+    </mat-form-field>
+  </form>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="!editForm.valid">
+      <mat-label>Save</mat-label>
+    </button>
+    <span style="margin-left: 5px;"></span>
+    <button mat-raised-button color="accent" routerLink="/">
+      <mat-label>Cancel</mat-label>
+    </button>
+  </div>
+</div>
